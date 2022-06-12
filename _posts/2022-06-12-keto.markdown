@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "KETO"
+date:   2022-06-12 16:25:10 -0400
+categories: jekyll update
+---
+I started a Keto diet late last year. These are my notes in no particular order.
+
+Things you can't have
+
+Keto is brutal and not a healthy diet. You're supposed to avoid half the vegetables (carrots, tomatoes, zucchini can exceed your carb numbers) and almost all fruit. Just have a quick peek at the number of net carbs in one single banana.
+
+On the other hand you can have limitless red meat, cheese and cream. That will add cholestrol and the diet is generally imbalanced. Watch your Vitamin C and fiber in particular.
+
+You need replacements for bread, rice, fruit and dessert. You can't just not have them. You'll feel the need soon enough and it will become a battle of willpower unless you premake/prepurchase Keto replacements and stay ready. 
+
+Bread
+
+This has been the single biggest factor in the success of my Keto diet. Bread adds that 'umami' and lets me eat burgers, sandwiches, pizza, grilled cheese sandwiches etc without feeling like I'm on a restrictive diet. I've tried bread from other brands (Unbun: yuck) with little success. They seem to taste soggy and have more than twice as many calories as Carbonaut products. For example Pizza Pizza's Keto pizza feels small and can be eaten in one sitting while clockin in at 1200 calories. The Carbonaut pizza base is bigger, tastes more like real bread and has 60 calories!
+
+Nuts
+
+Nuts have been the second most important factor for me. I need something on gnaw or chew on through the day and peanuts are mealy and nutritious. With the lack of sweet fruits and sugary options, I can end up eating a lot of peanuts in a day (200 calories after two bowls or more). So I try to pace myself with them. 
+
+I have since discovered Turkish pistachios and extra roast peanuts from Nuts.com. The shipping takes forever at over a week to Canada but they're better tasting nuts than anything from Bulk Barn or grocery stories here in Canada. I'm still on the lookout for good nuts more locally.
+
+Ketolybrium
+
+This is a London, ON based company that makes prepared meals and delivers them themselves to the GTA on the weekend. Most of their meals are delicious and nicely sized (500-600 calories too) with a few over 10 net carbs. Some items I would avoid like the chocolate bullets which are there just for fat loading. A few bullets when you're hungry and you're already at above 1000 calories while not feeling full still. The cauliflower rice-based dishes are particularly good tasting. Prepared and pre-sealed, they will not look like their pictures but if you get a 7-pack and have one per day (or two per day with their breakfast bowl items), it becomes easy to hit targets while being satiated the whole day. I'm in particular impressed by their bagels. They're tiny and SUPER dense and heavy on the stomach. I'd have one with cheese, butter or egg in the morning and I'm still full by lunch. I tried two bagels the first morning and I just couldn't finish them. I avoid the pizzas. High calories for little satiety.
+
+Keto Girl Bakes
+
+My favorite Keto shop in the GTA. They have various baked products but the cupakes.. 220-260 calories each while being quite big and filling. If you've had Keto dessert before you know how little a serving is and how much of the daily numbers they'd fill. These cupcakes are big enough to eat in multiple sittings (I do not). The only downside? They could be a little less sweet.
+
+Fast food
+
+I keep a list of fast food items that fit in my macros and are filling. A&W uncle burger on a lettuce bun, Five Guys Jr cheeseburger on a lettuce bun, McDonalds (not as filling), BarBurrito/Pita Pit chicken burrito bowls. The burrito bowl places are particularly filling, spicy and healthy. Make sure to not add rice, beans, breaded chicken (BBQ flavors) and only pick sauces like sour cream and mustard.
+
+Beware of McDonalds. They have a 50% success rate of giving you a bunless burger. The other 50% of the time you simply get a burger with buns and their patty/cheese are particularly hard to separate from the bun. But they tend to be everywhere.
+
+Theres absolutely nothing to be had from Tim Hortons beside water, diet coke or black coffee. I've at least once caved and gotten one timbit, accepting the massive carb hit from it.
+
+Starbucks
+
+Starbucks has Keto options but not on their menu. My two favorites:
+
+Keto pink drink
+
+They really ought to add this to the menu. It is so common that the baristas know it.
+Grande iced peach tea with sugar free vanilla pumps instead of the regular sweetener, two splendas and a splash of heavy cream. It comes up to about 5g carb 100 Cal and tastes like it was way more. Downside: most places add more than a splash of cream to make the color look pink, so you're most likely having 150 Cal.
+
+Iced shaken expresso
+
+Grande iced shaken expresso, almond milk, sugar free vanilla pumps.
+It tastes better than most frappucinos although a bit diluted. I get 4 expresso shots.
+
+Beer
+
+I've discovered alcohol-free beers that taste awesome. Partake beer is in most Canadian grocery stores and Libra beer is online-order only. For Libra, their Hazy IPA is WAY better than their regular IPA and the stout is really good good.
+
+Here's my cheatsheet for alcohol beers with acceptable numbers:
+- Devil's Backbone Bright Tangerine Sparking 6-Pack (4%, 90Cal, 2g)
+- Corona Premier Mexican Lager Light Beer (4% 90Cal 2.6g)
+- Michelob Ultra (4.2%, 95Cal, 2.6g)
+- Lagunitas DayTime IPA
+- Ommegang Brut IPA (6.3%, 140Cal, 3.9g)
+
+In most cases wine beats beer in terms of macros (and specific liquor beats them all in alcohol/calorie ratios)
+
+Coffee
+
+Switching to black coffee makes going on most diets significantly easier. I've become a coffee snob since I went on to Keto diet. I grind whole coffee beans that I get from local places. Illy and Kicking Horse are good and acceptable brands. I really like Jamaican Blue Mountain, Kenya AA, Brazilian smaller farms over Kona.. all from specialty shops. It keeps me looking forward to my next bag and overindulging gives me extra caffeine rather than carbs.
+
+Dessert
+
+The Keto Girl Bakes cupcakes might be peak keto dessert but sometimes one needs icecream.
+
+Englightened and Keto Skream are similar and taste great. The skream tastes more like regular icecream but Enlightened uses Monk Fruit.
+
+My favorite icecream however is Baskin & Robbins' sugar-free Pineapple and Coconut flavors. They have them at almost all branches.
+
+
+
+[ketolybrium]: https://ketolibriyum.ca/
+[carbonaut]: https://www.carbonaut.co/
+[ketogirlbakes]: https://www.facebook.com/ketogirlbakes/
+[enlightened]: https://eatenlightened.com/collections/keto
+[ketoskream]: https://ketoskream.com/
