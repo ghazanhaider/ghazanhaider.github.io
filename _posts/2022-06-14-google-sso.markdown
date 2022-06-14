@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Google SSO"
-date:   2022-06-14 16:25:10 -0400
+date:   2022-06-14 00:00:00 -0400
 ---
 ## What is Oauth2
 
