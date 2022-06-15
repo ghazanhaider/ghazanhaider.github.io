@@ -31,10 +31,11 @@ These permissions come in packages, for example you cannot define a 3rd party ap
 
 - Pick a scope to use. Try the minimum unless you know what you need: https://www.googleapis.com/auth/userinfo.profile
 - Create Google API Credentials and Oauth Consent Screen: https://console.cloud.google.com/apis/dashboard
-- Note the Client ID and Client Secret. Your app will use them on the login page
+-- Set the redirect URI to the oauth2callback URI
+-- Note the Client ID and Client Secret. Your app will use them on the login page
 
 
-## What each page should do
+## What each page (or route) should do
 
 - The login page offers a login link to a Google URL along with an application identifier
 - The return page, before drawing any html, uses the Authorization Code to fetch an Access Token from Google.
@@ -111,16 +112,16 @@ curl -H "Authorization: Bearer access_token" https://www.googleapis.com/drive/v2
 
 ```python
 import json
-
 import flask
 import requests
 
 
 app = flask.Flask(__name__)
+app.secret_key = b'abcdefghijkl'
 
 CLIENT_ID = '123456789.apps.googleusercontent.com'
 CLIENT_SECRET = 'abc123'  # Read from a file or environmental variable in a real app
-SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly'
+SCOPE = 'https://www.googleapis.com/auth/userinfo.profile'
 REDIRECT_URI = 'http://example.com/oauth2callback'
 
 
@@ -133,7 +134,7 @@ def index():
     return flask.redirect(flask.url_for('oauth2callback'))
   else:
     headers = {'Authorization': 'Bearer {}'.format(credentials['access_token'])}
-    req_uri = 'https://www.googleapis.com/drive/v2/files'
+    req_uri = 'https://www.googleapis.com/userinfo/v2/me'
     r = requests.get(req_uri, headers=headers)
     return r.text
 
@@ -154,13 +155,6 @@ def oauth2callback():
     r = requests.post('https://oauth2.googleapis.com/token', data=data)
     flask.session['credentials'] = r.text
     return flask.redirect(flask.url_for('index'))
-
-
-if __name__ == '__main__':
-  import uuid
-  app.secret_key = str(uuid.uuid4())
-  app.debug = False
-  app.run()
 ```
 
 
