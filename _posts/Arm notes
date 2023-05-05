@@ -1,0 +1,7 @@
+exception handling by arm cpu type:
+
+cortex-m:
+
+in an interrupt handler, LR is loaded with a special value of EXEC_RETURN. The handler can be a normal C function
+The correct original stack is unstacked and NVIC is updated
+
