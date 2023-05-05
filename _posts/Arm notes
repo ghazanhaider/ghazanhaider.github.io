@@ -5,3 +5,17 @@ cortex-m:
 in an interrupt handler, LR is loaded with a special value of EXEC_RETURN. The handler can be a normal C function
 The correct original stack is unstacked and NVIC is updated
 
+Each NVIC interrupt has these registers:
+ISER interrrupt set enable
+ICER interrupt clear enable
+ISPR set pending reg
+ICPR clear pending reg
+IABR active, readonly
+IP   interrupt priority
+
+CPSIE i; __enable_irq(); MSR PRIMASK #0
+CPSID i; __disable_irq(); MSR PRaiMASK #1
+
+Basically in cmsis:
+NVIC_SetPriority()
+NVIC_EnableIRQ()
