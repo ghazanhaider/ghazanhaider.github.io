@@ -1,0 +1,186 @@
+---
+layout: post
+title:  "Common Clock Framework"
+date:   2023-08-25 00:00:00 -0400
+---
+
+# Common Clock Framework
+
+The clock struct structure. Here's how clk, clk_core, clk_hw, clk_ops are related to each other:
+
+
+clk
+- clk_core *core
+	- char *name
+	- clk_ops *ops
+		- (pointers to functions)
+	- clk_hw *hw
+		- clk_core *core (points back to clk_core)
+		- clk *clk (points back to clk)
+- device *dev
+- *dev_id
+- *con_id
+
+
+
+
+## struct clk in clk.c
+
+Parent of clk_core
+Pointers to clk_node in an hlist
+Points to struct device (differnet from hw?)
+
+```
+struct clk {
+	struct clk_core	*core;
+	struct device *dev;
+	const char *dev_id;
+	const char *con_id;
+	unsigned long min_rate;
+	unsigned long max_rate;
+	unsigned int exclusive_count;
+	struct hlist_node clks_node;
+};
+```
+
+
+## struct clk_core in clk.c
+Most of the clk details
+Has OF node and parent/child nodes
+Settings like rate, enable count/accuracy/phase
+Pointers to debug_node hlist, gets added there.
+
+```
+struct clk_core {
+        const char              *name;
+        const struct clk_ops    *ops;
+        struct clk_hw           *hw;
+        struct module           *owner;
+        struct clk_core         *parent;
+        const char              **parent_names;
+        struct clk_core         **parents;
+        u8                      num_parents;
+        u8                      new_parent_index;
+        ...
+}
+```
+
+
+struct clk_ops in clk-provider.h
+
+```
+struct clk_ops {
+        int             (*prepare)(struct clk_hw *hw);
+        void            (*unprepare)(struct clk_hw *hw);
+        int             (*is_prepared)(struct clk_hw *hw);
+        void            (*unprepare_unused)(struct clk_hw *hw);
+        int             (*enable)(struct clk_hw *hw);
+        void            (*disable)(struct clk_hw *hw);
+        int             (*is_enabled)(struct clk_hw *hw);
+        void            (*disable_unused)(struct clk_hw *hw);
+        unsigned long   (*recalc_rate)(struct clk_hw *hw,
+                                        unsigned long parent_rate);
+        long            (*round_rate)(struct clk_hw *hw,
+                                        unsigned long rate,
+                                        unsigned long *parent_rate);
+        int             (*determine_rate)(struct clk_hw *hw,
+                                          struct clk_rate_request *req);
+        int             (*set_parent)(struct clk_hw *hw, u8 index);
+        u8              (*get_parent)(struct clk_hw *hw);
+        int             (*set_rate)(struct clk_hw *hw,
+                                    unsigned long rate,
+                                    unsigned long parent_rate);
+        int             (*set_rate_and_parent)(struct clk_hw *hw,
+                                    unsigned long rate,
+                                    unsigned long parent_rate,
+                                    u8 index);
+        unsigned long   (*recalc_accuracy)(struct clk_hw *hw,
+                                        unsigned long parent_accuracy);
+        int             (*get_phase)(struct clk_hw *hw);
+        int             (*set_phase)(struct clk_hw *hw, int degrees);
+        void            (*init)(struct clk_hw *hw);
+        void            (*debug_init)(struct clk_hw *hw,
+                                      struct dentry *dentry);
+};
+```
+
+struct clk_hw in clk-provider.h
+
+Kernel comments:
+ * struct clk_hw - handle for traversing from a struct clk to its corresponding
+ * hardware-specific structure.  struct clk_hw should be declared within struct
+ * clk_foo and then referenced by the struct clk instance that uses struct
+ * clk_foo's clk_ops
+
+ Basically link back from driver specific clocks back to the generic clk structure
+
+```
+struct clk_hw {
+	struct clk_core *core;
+	struct clk *clk;
+	const struct clk_init_data *init;
+};
+```
+
+Driver-specific clk structures include this
+```
+struct clk_main_osc {
+	struct clk_hw hw;
+	struct regmap *regmap;
+};
+...
+struct clk_sam9260_slow {
+	struct clk_hw hw;
+	struct regmap *regmap;
+};
+```
+
+
+Driver code implemets these ops functions with driver-specific names. For example:
+
+`static u8 clk_sam9260_slow_get_parent(struct clk_hw *hw)`
+
+A clk_ops "overlay" struct specifies the functions that are implemeted:
+
+```
+static const struct clk_ops sam9260_slow_ops = {
+	.get_parent = clk_sam9260_slow_get_parent,
+};
+```
+
+
+A register function creates a *clk_init_data* struct and feeds it to *clk_hw_register()*
+```
+at91_clk_register_sam9260_slow(...) {
+	struct clk_init_data init;
+	...
+	init.name = name;
+	init.ops = &sam9260_slow_ops
+	slowck->hw.init = &init;
+	slowck->regmap = regmap;
+	...
+	ret = clk_hw_register(NULL, &slowck->hw);
+}
+```
+
+
+clk_hw_register() wraps clk_register() which builds a struct clk_core
+```
+__clk_create_clk(hw, NULL, NULL);
+__clk_core_init(core);
+__clk_free_clk(hw->clk);
+```
+
+
+`__clk_create_clk()` creates struct clk from clk_hw, dev_id con_id
+But, it is called with NULL dev_id and con_id
+
+
+Finally, a macro links of_nodes to this clock type
+```
+CLK_OF_DECLARE(at91sam9260_clk_slow, "atmel,at91sam9260-clk-slow",
+	       of_at91sam9260_clk_slow_setup);
+```
+
+The *of_at91sam9260_clk_slow_setup* is a wrapper around *at91_clk_register_sam9260_slow*
+
