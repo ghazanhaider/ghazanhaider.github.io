@@ -6,23 +6,80 @@ date:   2023-10-09 00:00:00 -0400
 
 # Minimal LwIP TCP API (as used on a Raspberry PI pico-w)
 
+## Basic flow
+
+Minimal client app:
+```
+struct tcp_pcb * pcb;
+char * buffer[] = "Hello World\n"
+ip_addr_t remote_addr;
+
+tcp_connected_callback() {
+ tcp_write(pcb, buffer, 12, TCP_WRITE_FLAG_COPY);
+ return ERR_OK;
+}
+
+tcp_sent_callback() {
+ tcp_close(pcb);
+ return ERR_OK;
+}
+
+main() {
+ pcb = tcp_new()
+ tcp_sent(pcb, tcp_sent_callback);
+ ip4addr_aton("1.2.3.4", remote_addr);
+ cyw43_arch_lwip_begin();
+ tcp_connect(pcb,remote_addr,80,tcp_connected_callback)
+ cyw43_arch_lwip_end();
+}
+```
+
+Minimal server app(TODO):
+```
+struct tcp_pcb * pcb;
+char * buffer[] = "Hello World\n"
+ip_addr_t remote_addr;
+
+tcp_connected_callback() {
+ tcp_write(pcb, buffer, 12, TCP_WRITE_FLAG_COPY);
+ return ERR_OK;
+}
+
+tcp_sent_callback() {
+ tcp_close(pcb);
+ return ERR_OK;
+}
+
+main() {
+ pcb = tcp_new()
+ tcp_sent(pcb, tcp_sent_callback);
+ ip4addr_aton("1.2.3.4", remote_addr);
+ cyw43_arch_lwip_begin();
+ tcp_connect(pcb,remote_addr,80,tcp_connected_callback)
+ cyw43_arch_lwip_end();
+}
+```
+
+
+## Client side API
+
 ### tcp_new()
 ```
 struct tcp_pcb* tcp_new	(	void 		)	
 struct tcp_pcb* tcp_new_ip_type	(	u8_t 	type	)
 ```
-Creates a new TCP protocol control block but doesn't place it on any of the TCP PCB lists until binding using tcp_bind().
+Creates a new TCP protocol control block in closed state
 
 Parameters
 - IPADDR_TYPE_ANY|
 Returns
 - a new tcp_pcb that initially is in state CLOSED
 
-### tcp_bind()
 
 ### tcp_connect()
 ```
-err_t tcp_connect ( struct tcp_pcb * pcb, const ip_addr_t * ipaddr, u16_t port, tcp_connected_fn connected)
+ip4addr_aton("x.x.x.x", ip_addr_t ipaddr);
+err_t tcp_connect ( struct tcp_pcb * pcb, const ip_addr_t * ipaddr, u16_t port, tcp_connected_fn connected);
 ```
 Parameters
 - pcb	the tcp_pcb used to establish the connection
@@ -36,6 +93,7 @@ Returns
 ```
 err_t tcp_write	( struct tcp_pcb * pcb, const void * arg, u16_t len, u8_t apiflags)
 ```
+Doesn't send right away unless tcp_output() is run immediately after
 Parameters
 - pcb   Protocol control block for the TCP connection to enqueue data for.
 - arg	Pointer to the data to be enqueued for sending.
@@ -54,5 +112,87 @@ Parameters
 - pcb	Protocol control block for the TCP connection to send data
 Returns
 - ERR_OK if data has been sent or nothing to send another err_t on error
+
+## Server/Listening side
+
+### tcp_bind()
+```
+err_t tcp_bind( struct tcp_pcb * pcb, const ip_addr_t * ipaddr, u16_t port );
+```
+Parameters
+- pcb	the tcp_pcb to bind (no check is done whether this pcb is already bound!)
+- ipaddr	the local ip address to bind to (use IP4_ADDR_ANY to bind to any local address
+- port	the local port to bind to
+Returns
+- ERR_USE if the port is already in use ERR_VAL if bind failed because the PCB is not in a valid state ERR_OK if bound
+
+
+### tcp_listen()
+```
+struct tcp_pcb* tcp_listen_with_backlog( struct tcp_pcb * pcb, u8_t backlog );
+```
+Set the state of the connection to be LISTEN, which means that it is able to accept incoming connections. The protocol control block is reallocated in order to consume less memory. Setting the connection to LISTEN is an irreversible process.
+
+Parameters
+- pcb	the original tcp_pcb
+- backlog	the incoming connections queue limit
+Returns
+- tcp_pcb used for listening, consumes less memory.
+Note
+The original tcp_pcb is freed. This function therefore has to be called like this: tpcb = tcp_listen_with_backlog(tpcb, backlog);
+
+
+### tcp_accept()
+```
+void tcp_accept ( struct tcp_pcb * pcb, tcp_accept_fn accept );
+```
+Used for specifying the function that should be called when a LISTENing connection has been connected to another host.
+
+Parameters
+- pcb	tcp_pcb to set the accept callback
+- accept	callback function to call for this pcb when LISTENing connection has been connected to another host
+
+### tcp_recv()
+```
+void tcp_recv	(	struct tcp_pcb * 	pcb,
+tcp_recv_fn 	recv 
+)
+```
+Used to specify the function that should be called when a TCP connection receives data.
+
+Parameters
+pcb	tcp_pcb to set the recv callback
+- recv	callback function to call for this pcb when data is received
+
+### tcp_recved()
+```
+void tcp_recved	( struct tcp_pcb *pcb, u16_t len);
+```
+This function should be called by the application when it has processed the data. The purpose is to advertise a larger window when the data has been processed.
+
+Parameters
+- pcb	the tcp_pcb for which data is read
+- len	the amount of bytes that have been read by the application
+
+
+## Other functions
+
+### tcp_abort()
+```
+void tcp_abort(struct tcp_pcb * pcb	);
+```
+Aborts the connection by sending a RST (reset) segment to the remote host. The pcb is deallocated. This function never fails.
+
+ATTENTION: When calling this from one of the TCP callbacks, make sure you always return ERR_ABRT (and never return ERR_ABRT otherwise or you will risk accessing deallocated memory or memory leaks!
+
+Parameters
+- pcb	the tcp pcb to abort
+
+
+### tcp_poll()
+```
+void tcp_poll ( struct tcp_pcb * pcb, tcp_poll_fn poll, u8_t interval);
+```
+Used to specify the function that should be called periodically from TCP. The interval is specified in terms of the TCP coarse timer interval, which is called twice a second.
 
 
