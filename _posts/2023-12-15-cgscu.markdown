@@ -4,7 +4,7 @@ title:  "C-GSCU F33A for sale"
 date:   2023-12-15 00:00:00 -0400
 ---
 
-# For sale C-GSCU F33A Bonanza 1992 ($140000 USD)
+# For sale C-GSCU F33A Bonanza 1992 ($130000 USD)
 
 Selling my Bonanza in good flying condition.
 I'm the second owner since 2019. A flight school owned it from 1992 before me.
@@ -12,13 +12,14 @@ All logs available
 Took the plane to an ABS Service Clinic in 2020 (report available with most items remedied)
 It has always been hangared (except for overnight trips of course)
 Oil/filter changed frequently (~25 hours) with Phillips and Camguard
+Blackstone labs results available for most oil changes done in the last 3 years.
 Flown regularly, at least once a month in most cases.
 Engine was always heated below 0C before starting.
 GAMI Injectors (and intake) are well balanced, she can go deep LOP (100f+) with even CHTs and EGTs
 Savvy Analysis of engine monitor graphs is also available to show most cruises have been LOP and well below 400f.
 Stock plane with minimal modifications/STCs. Recent year airframe with Zinc Chromate inside.
 Never landed on grass or gravel (during my ownership)
-Large baggage doors
+Large baggage door
 Two simple fuel tanks with 74Gallons usable
 Landing gear box and motor overhauled in 2020 by Cruiseair
 
@@ -84,6 +85,8 @@ uAvionix Tailbeacon ADS-B out (have the original taillight as well)
 Bruce engine cover
 EZ-Heat engine sump heater pad
 Dual yoke and copilot brakes
+Saf-air low profile oil drain makes connecting oil hose easier
+
 
 ## Recent Maintenance (last 3 years)
 
@@ -94,7 +97,8 @@ Mag harness was chafed, both sets of harnesses replaced with new
 Intake hoses replaced with new
 DME Display issue resolved by replacing the DME head
 Left muffler replaced because it had lost the flamecone, both tailpipes replaced
-Fuel boost pump overhauled
+Fuel boost pump replaced with overhaul after slight drip noticed on drain valve
+NLG strut resealed and re-pressured. No leaks in over a year now.
 
 
 ## Engine history (gathered from logs)
@@ -165,3 +169,7 @@ Fuel boost pump overhauled
 ![pic](/gscu/IMG_5006.HEIC.jpg)
 ![pic](/gscu/IMG_5646.HEIC.jpg)
 
+### Picture notes:
+
+- Some pics show the older harness, it has been replaced with new
+- One pic shows the older Curtiss oil drain, has been replaced with Saf-air low profile
