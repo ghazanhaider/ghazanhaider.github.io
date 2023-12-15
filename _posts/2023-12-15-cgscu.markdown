@@ -6,99 +6,99 @@ date:   2023-12-15 00:00:00 -0400
 
 # For sale C-GSCU F33A Bonanza 1992 ($130000 USD)
 
-Selling my Bonanza in good flying condition.
-I'm the second owner since 2019. A flight school owned it from 1992 before me.
-All logs available
-Took the plane to an ABS Service Clinic in 2020 (report available with most items remedied)
-It has always been hangared (except for overnight trips of course)
-Oil/filter changed frequently (~25 hours) with Phillips and Camguard
-Blackstone labs results available for most oil changes done in the last 3 years.
-Flown regularly, at least once a month in most cases.
-Engine was always heated below 0C before starting.
-GAMI Injectors (and intake) are well balanced, she can go deep LOP (100f+) with even CHTs and EGTs
-Savvy Analysis of engine monitor graphs is also available to show most cruises have been LOP and well below 400f.
-Stock plane with minimal modifications/STCs. Recent year airframe with Zinc Chromate inside.
-Never landed on grass or gravel (during my ownership)
-Large baggage door
-Two simple fuel tanks with 74Gallons usable
-Landing gear box and motor overhauled in 2020 by Cruiseair
+Selling my Bonanza in good flying condition.  
+I'm the second owner since 2019. A flight school owned it from 1992 before me.  
+All logs available  
+Took the plane to an ABS Service Clinic in 2020 (report available with most items remedied)  
+It has always been hangared (except for overnight trips of course)  
+Oil/filter changed frequently (~25 hours) with Phillips and Camguard  
+Blackstone labs results available for most oil changes done in the last 3 years.  
+Flown regularly, at least once a month in most cases.  
+Engine was always heated below 0C before starting.  
+GAMI Injectors (and intake) are well balanced, she can go deep LOP (100f+) with even CHTs and EGTs  
+Savvy Analysis of engine monitor graphs is also available to show most cruises have been LOP and well below 400f.  
+Stock plane with minimal modifications/STCs. Recent year airframe with Zinc Chromate inside.  
+Never landed on grass or gravel (during my ownership)  
+Large baggage door  
+Two simple fuel tanks with 74Gallons usable  
+Landing gear box and motor overhauled in 2020 by Cruiseair  
 
 
 ## Numbers
 
-Serial: CE-1695
-TTAF: 13295
-Engine TSO: 2000
-Seats: 4
-Damage: none
-Logs: All logs available
-Last annual: 21 Nov 2023
-W&B: Empty: 2331 Empty arm: 81.51
+- Serial: CE-1695
+- TTAF: 13295
+- Engine TSO: 2000
+- Seats: 4
+- Damage: none
+- Logs: All logs available
+- Last annual: 21 Nov 2023
+- W&B: Empty: 2331 Empty arm: 81.51
 
 
 ## Engine
 
-IO-520-BB with Slick 6310s and continental cylinders
-TTSO: 2000
-Engine was overhauled/replaced last on 17 Dec 2012. S/N 813799
-Cylinders 1,2,3,6 have been replaced since
-Engine mounts (lord) replaced with new on 23 May 2023
-Exhaust valve pictures and Blackstone Labs reports available
+- IO-520-BB with Slick 6310s and continental cylinders
+- TTSO: 2000
+- Engine was overhauled/replaced last on 17 Dec 2012. S/N 813799
+- Cylinders 1,2,3,6 have been replaced since
+- Engine mounts (lord) replaced with new on 23 May 2023
+- Exhaust valve pictures and Blackstone Labs reports available
 
 
 ## Propeller
-mccauley 3a32c406-d S/N:190046
-TTSN: 138 (installed new 1 Apr 2019)
+- McCauley 3a32c406-d S/N:190046
+- TTSN: 138 (installed new 1 Apr 2019)
 
 
 ## Equipment
 
-GEM610-001 engine monitor with OAT probe
-ELT ME406 s/n 10244
-MD41-528 annunciator
-KNS81 Nav/RNAV
-KLN94 GPS
-KI525A HSI 
-KA51B slaving accessory
-KI209A CDI
-KY196A Comm
-KX155 NAV/COM
-KN63 DME (KDI572 indicator, driven by KNS81)
-KR87 ADF (KA44 antenna)
-KI229 RMI
-KI227
-KR21 marker beacon
-KG102A directional gyro
-KMT112 flux valve
-CI-1125 dual g/s diplexer 
-KT70 XPNDR Mode-S with squat switch
-KMA24H Audio panel
-KEA130A encoding altimeter
-Stec st-289 Manual Electric Elevator Trim System (no autopilot)
-GEM610 engine monitor with its own OAT probe
-mccauley 3a32c406-d
-LC2 clock
-RC Allen rca 2600-2 AI (copilot side)
-TAS600 Avidyne (audio reports only, no head/display)
-Pulselite 1210/2405-2
-uAvionix Tailbeacon ADS-B out (have the original taillight as well)
-Bruce engine cover
-EZ-Heat engine sump heater pad
-Dual yoke and copilot brakes
-Saf-air low profile oil drain makes connecting oil hose easier
+- GEM610-001 engine monitor with OAT probe
+- ELT ME406 s/n 10244
+- MD41-528 annunciator
+- KNS81 Nav/RNAV
+- KLN94 GPS
+- KI525A HSI 
+- KA51B slaving accessory
+- KI209A CDI
+- KY196A Comm
+- KX155 NAV/COM
+- KN63 DME (KDI572 indicator, driven by KNS81)
+- KR87 ADF (KA44 antenna)
+- KI229 RMI
+- KI227
+- KR21 marker beacon
+- KG102A directional gyro
+- KMT112 flux valve
+- CI-1125 dual g/s diplexer 
+- KT70 XPNDR Mode-S with squat switch
+- KMA24H Audio panel
+- KEA130A encoding altimeter
+- Stec st-289 Manual Electric Elevator Trim System (no autopilot)
+- GEM610 engine monitor with its own OAT probe
+- mccauley 3a32c406-d
+- LC2 clock
+- RC Allen rca 2600-2 AI (copilot side)
+- TAS600 Avidyne (audio reports only, no head/display)
+- Pulselite 1210/2405-2
+- uAvionix Tailbeacon ADS-B out (have the original taillight as well)
+- Bruce engine cover
+- EZ-Heat engine sump heater pad
+- Dual yoke and copilot brakes
+- Saf-air low profile oil drain makes connecting oil hose easier
 
 
 ## Recent Maintenance (last 3 years)
 
-Landing gearbox and motor overhaul (rodends changed too)
-Motor mounts replaced with new Lord
-Injectors replaced with GAMI and balanced
-Mag harness was chafed, both sets of harnesses replaced with new
-Intake hoses replaced with new
-DME Display issue resolved by replacing the DME head
-Left muffler replaced because it had lost the flamecone, both tailpipes replaced
-Fuel boost pump replaced with overhaul after slight drip noticed on drain valve
-NLG strut resealed and re-pressured. No leaks in over a year now.
+- Landing gearbox and motor overhaul (rodends changed too)
+- Motor mounts replaced with new Lord
+- Injectors replaced with GAMI and balanced
+- Mag harness was chafed, both sets of harnesses replaced with new
+- Intake hoses replaced with new
+- DME Display issue resolved by replacing the DME head
+- Left muffler replaced because it had lost the flamecone, both tailpipes replaced
+- Fuel boost pump replaced with overhaul after slight drip noticed on drain valve
+- NLG strut resealed and re-pressured. No leaks in over a year now.
 
 
 ## Engine history (gathered from logs)
